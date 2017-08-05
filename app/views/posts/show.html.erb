@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Url:</strong>
-  <img src="<%= @post.url %>" alt="">
-</p>
+
+<p>Created At <%= @post.created_at.strftime('%B %e %Y at %l:%M %p') %></p>
+<img src="<%= @post.url %>" alt="">
 
 <p>
   <strong>Name:</strong>
