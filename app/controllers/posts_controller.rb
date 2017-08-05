@@ -24,17 +24,25 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    if current_user
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+      @post = Post.new(post_params)
+      @post.user = current_user
+
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to @post, notice: 'Post was successfully created.' }
+          format.json { render :show, status: :created, location: @post }
+        else
+          format.html { render :new }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
+
+    else 
+      redirect_to login_path
     end
+    
   end
 
   # PATCH/PUT /posts/1
