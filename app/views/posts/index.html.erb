@@ -18,7 +18,7 @@
       <tr>
         <td><%= post.name %></td>
         <td><%= post.description %></td>
-        <td><%= post.url %></td>
+        <td><img src="<%= post.url %>" alt=""></td>
         <td><%= post.user.email %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
