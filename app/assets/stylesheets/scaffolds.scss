@@ -1,17 +1,12 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
 
 pre {
   background-color: #eee;
@@ -81,4 +76,17 @@ div {
 
 label {
   display: block;
+}
+
+
+
+.background-image {
+  
+  background-image: url("https://images.unsplash.com/reserve/Lt0DwxdqRKSQkX7439ey_Chaz_fisheye-11.jpg"); 
+  background-size:cover;
+  height: 100vh;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: flex;
+  justify-content: center;
 }

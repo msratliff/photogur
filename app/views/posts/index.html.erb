@@ -1,23 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>All Submissions</h1>
 
-<table>
+<div class="images">
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <td>
-      <%= link_to image_tag(post.url, :alt => "Image Description"), post %>
-      </td>
-    <% end %>
-  </tbody>
-</table>
+	<div class="images-grid">
+		<% @posts.each do |post| %>
+	      <div class="images-grid__images">
+	      	<%= link_to image_tag(post.url, :alt => "Image Description", class:"images-grid__image"), post %>
+	      </div>
+	    <% end %>
 
-<br>
+	</div>
+	
 
-<% if current_user %>
-  <%= link_to 'New Post', new_post_path %>
-<% else %>
-  <%= link_to 'Sign In to Create Post', login_path %>
-<% end %>
-
+</div>

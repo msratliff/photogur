@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Photogur</title>
-    <%= csrf_meta_tags %>
+	<head>
+		<title>Photogur</title>
+		<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
 
-  <body>
+	<body>
 
-  <div class="nav">
-  	
-    <div class="nav__postblock">
-      <%= link_to "Home", root_path , class:"nav__link" %>
-       <%= link_to 'New Post', new_post_path , class:"nav__link" %>
+		<div class="nav">
+			
+			<div class="nav__postblock">
+				<%= link_to "Home", root_path , class:"nav__link" %>
+				 <% if current_user %>
+					<%= link_to 'New Post', new_post_path %>
+				<% else %>
+					<%= link_to 'Sign In to Create Post', login_path %>
+				<% end %>
+			</div>
 
-    </div>
-
-    <div class="nav__userblock">
-      <% if current_user %>
-        <%= link_to current_user.email, current_user , class:"nav__link" %>
-        <%= link_to "Log Out", logout_path , class:"nav__link" %>
-      <% else %>
-        <%= link_to "Sign Up", signup_path , class:"nav__link" %> or
-        <%= link_to "Log In", login_path , class:"nav__link" %>
-      <% end %>
-  	</div>
+			<div class="nav__userblock">
+				<% if current_user %>
+					<%= link_to current_user.email, current_user , class:"nav__link" %>
+					<%= link_to "Log Out", logout_path , class:"nav__link" %>
+				<% else %>
+					<%= link_to "Sign Up", signup_path , class:"nav__link" %> or
+					<%= link_to "Log In", login_path , class:"nav__link" %>
+				<% end %>
+			</div>
 
 
 
-  </div>
+		</div>
 
-    <%= yield %>
-  </body>
+		<%= yield %>
+	
+	</body>
+	
 </html>

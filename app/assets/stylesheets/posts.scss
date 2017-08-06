@@ -1,3 +1,44 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.images {
+	display: flex;
+	justify-content: space-between;
+}
+
+.images-grid {
+	width: 75%;
+	margin: auto;
+	display: flex;
+	background-color: darkgrey;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+
+.images-grid__images {
+	width:  22vw;
+  	height: 22vw;
+  	min-width: 200px;
+  	min-height: 200px;
+	overflow: hidden;
+	background-color: black;
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	margin-bottom: 1vw;
+	position: relative;
+
+}
+
+.images-grid__image {
+	width: 150%;
+	position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}
