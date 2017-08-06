@@ -10,15 +10,19 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+<table>
+	<tbody>
+		<% @user.posts.each do |post| %>
+			<% if current_user && post.user.id == current_user.id %>
+				<td>
+					<%= link_to image_tag(post.url, :alt => "Image Description"), post %>
+				</td>
+			<% end %>
+		<% end %>
+	</tbody>
+</table>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

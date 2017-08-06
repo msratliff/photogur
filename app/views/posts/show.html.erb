@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>Created At <%= @post.created_at.strftime('%B %e %Y at %l:%M %p') %></p>
+<img src="<%= @post.url %>" alt="">
+
 <p>
   <strong>Name:</strong>
   <%= @post.name %>
@@ -10,13 +14,11 @@
   <%= @post.description %>
 </p>
 
-<p>
-  <strong>Url:</strong>
-  <img src="<%= @post.url %>" alt="">
-</p>
 
 <%= render 'comments/comment' %>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<% if current_user && @post.user.id == current_user.id %>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Back', posts_path %>
+<% end %>

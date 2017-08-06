@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.admin?
+      @users = User.all
+    else
+      redirect_to root_url, notice: "Need Admin Access!"
+    end
   end
 
   # GET /users/1
@@ -23,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    byebug
+    
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -81,12 +85,8 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-
-    # def user_params
-    #   params.require(:user).permit(:name, :email, :password, :admin)
-    # end
 
 end
