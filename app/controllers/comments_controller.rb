@@ -28,11 +28,12 @@ class CommentsController < ApplicationController
       redirect_to post_path(@post)
     else
       render 'edit'
+    end
   end
 
   private
   def find_post
-    @post = post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
 
   end
 
