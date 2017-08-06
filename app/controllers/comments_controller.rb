@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
 
       @comment = @post.comments.create(params[:comment].permit(:content))
       @comment.user_id = current_user.id
-      byebug
       @comment.save
 
       if @comment.save
@@ -16,7 +15,7 @@ class CommentsController < ApplicationController
       else
         render'new'
       end
-    
+
     else
       redirect_to login_path
     end
@@ -28,7 +27,7 @@ class CommentsController < ApplicationController
       @comment.destroy
       redirect_to post_path(@post)
     else
-      redirect_to @post, notice: 'This is not your comment' 
+      redirect_to @post, notice: 'This is not your comment'
     end
 
   end
@@ -38,7 +37,7 @@ class CommentsController < ApplicationController
 
   def update
     if current_user && (current_user.id == @comment.user.id || current_user.admin?)
-      
+
       if @comment.update(params[:comment].permit(:content))
         redirect_to post_path(@post)
       else
@@ -46,7 +45,7 @@ class CommentsController < ApplicationController
       end
 
     else
-      redirect_to @post, notice: 'This is not your comment' 
+      redirect_to @post, notice: 'This is not your comment'
     end
 
   end
