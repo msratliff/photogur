@@ -4,31 +4,51 @@ class CommentsController < ApplicationController
   before_action :comment_owner, only: [:destroy, :edit, :update]
 
   def create
-    @comment = @post.comments.create(params[:comment].permit(:content))
-    @comment.user_id = current_user.id
-    @comment.save
+    if current_user
 
-    if @comment.save
-      redirect_to_post_path(@post)
+      @comment = @post.comments.create(params[:comment].permit(:content))
+      @comment.user_id = current_user.id
+      byebug
+      @comment.save
+
+      if @comment.save
+        redirect_to post_path(@post)
+      else
+        render'new'
+      end
+    
     else
-      render'new'
+      redirect_to login_path
     end
+
   end
 
   def destroy
-    @comment.destroy
-    redirect_to post_path(@post)
+    if current_user && (current_user.id == @comment.user.id || current_user.admin?)
+      @comment.destroy
+      redirect_to post_path(@post)
+    else
+      redirect_to @post, notice: 'This is not your comment' 
+    end
+
   end
 
   def edit
   end
 
   def update
-    if @comment.update(params[:comment].permit(:content))
-      redirect_to post_path(@post)
+    if current_user && (current_user.id == @comment.user.id || current_user.admin?)
+      
+      if @comment.update(params[:comment].permit(:content))
+        redirect_to post_path(@post)
+      else
+        render 'edit'
+      end
+
     else
-      render 'edit'
+      redirect_to @post, notice: 'This is not your comment' 
     end
+
   end
 
   private

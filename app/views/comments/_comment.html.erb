@@ -1,11 +1,14 @@
-<%@comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <p><b><%= comment.user.email %></b></p>
   <p><%= comment.content %></p>
 
-  <% if current_user == comment.user %>
+
+  <% if current_user && (comment.user.id == current_user.id || current_user.admin?)  %>
     <%= link_to "Delete comment",[comment.post, comment], method: :delete %>
     <%= link_to "Edit comment", edit_post_comment_path(comment.post, comment) %>
   <% end %>
+
+
 <% end %>
 
 <%= render 'comments/form' %>
