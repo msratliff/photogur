@@ -1,28 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<div class="user">
 
-
-<table>
-	<tbody>
+	<div class="user-grid">
 		<% @user.posts.each do |post| %>
 			<% if current_user && post.user.id == current_user.id %>
-				<td>
-					<%= link_to image_tag(post.url, :alt => "Image Description"), post %>
-				</td>
+				<div class="user-grid__images">
+					<%= link_to image_tag(post.url, :alt => "Image Description", class:"user-grid__image"), post %>
+				</div>
 			<% end %>
 		<% end %>
-	</tbody>
-</table>
 
+	</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<div class= "user-info">
+		<p>
+		  <strong>Name:</strong>
+		  <%= @user.name %>
+		</p>
+
+		<p>
+		  <strong>Email:</strong>
+		  <%= @user.email %>
+		</p>
+
+		<%= link_to 'Edit', edit_user_path(@user) %> |
+		<%= link_to 'Back', root_path %>	
+	</div>
+
+</div>
