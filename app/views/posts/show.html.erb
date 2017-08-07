@@ -22,6 +22,10 @@
 	</p>
 
 	<p>
+		Tags: <%= raw @post.tags.map(&:name).map { |t| link_to t, post_tag_path(t) }.join(", ") %>
+	</p>
+
+	<p>
 		<%= @post.description %>
 	</p>
 

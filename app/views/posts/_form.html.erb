@@ -1,14 +1,14 @@
 <%= form_with(model: post, local: true) do |form| %>
 	<% if post.errors.any? %>
-	<div id="error_explanation">
-		<h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+		<div id="error_explanation">
+			<h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-		<ul>
-			<% post.errors.full_messages.each do |message| %>
-			<li><%= message %></li>
-			<% end %>
-		</ul>
-	</div>
+			<ul>
+				<% post.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
 	<% end %>
 
 
@@ -24,6 +24,9 @@
 			
 				<%= form.label :url %>
 				<%= form.text_field :url, id: :post_url %>
+
+				<%= form.label :tag_list, "Tags (separated by commas)" %>
+				<%= form.text_field :tag_list %>
 			
 
 			<div class="actions">
