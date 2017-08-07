@@ -12,7 +12,7 @@
 
 	</div>
 
-	<p>Created At <%= @post.created_at.strftime('%B %e %Y at %l:%M %p') %></p>
+	<p>Submitted by <%= @post.user.email%> at <%= @post.created_at.strftime('%B %e, %Y at %l:%M %p') %></p>
 
 	<img src="<%= @post.url %>" alt="" class="post-container__image">
 
