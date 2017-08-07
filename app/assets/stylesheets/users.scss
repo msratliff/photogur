@@ -16,6 +16,7 @@
 	background-color: darkgrey;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	padding: 1.5vw;
 }
 
 
@@ -42,12 +43,31 @@
     left: -9999px;
     right: -9999px;
     margin: auto;
+
+    &:hover {
+    	transform: scale(0.95);
+    }
 }
 
 .user-info {
-	margin-right: 10px;
-	font-size: 25px;
+	margin-right: 2%;
+	font-size: 1.25rem;
+	background-color: #222833;
+	padding-left: 1%; 
+	padding-right: 3%;
+	color: #f4f4f4;
 }
+	
 
+.user-info > a {
+	color: #f4f4f4;
+	text-decoration: none;
+	font-size: 1.0625rem;
+
+	&:hover {
+    	text-decoration: underline;
+    }
+
+}
 
 
