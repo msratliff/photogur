@@ -42,3 +42,40 @@
     right: -9999px;
     margin: auto;
 }
+
+.post-container {
+	width: 75%;
+	background-color: lightgrey;
+	padding: 1rem;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	
+}
+
+.post-container__links {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.post-container__links > * {
+	margin: 5px;
+
+}
+
+
+.post-container__image {
+	width: 80%;
+	margin: auto;
+}
+
+.post-name {
+	font-size: 2rem;
+}
+
+.comments-container {
+	width: 75%;
+	margin: auto;
+}

@@ -14,18 +14,7 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #000;
 
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
 
 th {
   padding-bottom: 5px;
@@ -74,11 +63,45 @@ div {
   }
 }
 
-label {
-  display: block;
+.nav {
+  width: 100%;
+  background-color: #222833;
+  color: white;
+  display: flex;
+
 }
 
+.nav__postblock {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.125rem;
+}
 
+.nav__userblock {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.125rem;
+}
+
+.nav__link {
+  margin: 5px;
+  text-decoration: none;
+  color: #fff;
+
+  /*&:visited {
+    color: #666;
+  }*/
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
 .background-image {
   
@@ -86,7 +109,29 @@ label {
   background-size:cover;
   height: 100vh;
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   display: flex;
   justify-content: center;
+}
+
+.signup-form {
+  height: 35vh;
+  width: 50vw;
+  background-color: #222833;
+  text-align: center;
+  margin-top: 25vh;
+  border-radius: 10px;
+}
+
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 5vh 5vh 5vh;
+  padding: 35px;
+  justify-content: center;
+  text-align: left;
+}
+
+.grid-container > * {
+  margin: 5px;
 }

@@ -1,18 +1,24 @@
 <div class="background-image">
 
-	<h1>Log In</h1>
+	<div class="signup-form">
+		<h1>Log In</h1>
 
-	<%= form_tag sessions_path do %>
-	  <div class="field">
-	    <%= label_tag :email %><br />
-	    <%= text_field_tag :email, params[:email] %>
-	  </div>
-	  <div class="field">
-	    <%= label_tag :password %><br />
-	    <%= password_field_tag :password %>
-	  </div>
-	  <div class="actions"><%= submit_tag "Log In" %></div>
-	<% end %>
+		<%= form_tag sessions_path do %>
+			<div class="grid-container">
+
+			
+				<%= label_tag :email %>
+				<%= text_field_tag :email, params[:email] %>
+			
+			
+				<%= label_tag :password %>
+				<%= password_field_tag :password %>
+
+				<div class="actions"><%= submit_tag "Log In" %></div>
+			</div>
+
+		<% end %>
 
 
+	</div>
 </div>

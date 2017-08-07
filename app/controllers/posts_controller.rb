@@ -70,6 +70,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    
     if current_user && (current_user.id == @post.user.id || current_user.admin?)
 
       @post.destroy
