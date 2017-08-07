@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
-  </div>
+	<div class="user-form__grid">
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
-  </div>
+	    <%= form.label :name %>
+	    <%= form.text_field :name, id: :user_name %>
+	  
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, id: :user_password %>
-  </div>
+	    <%= form.label :email %>
+	    <%= form.text_field :email, id: :user_email %>
+	  
 
-  <div class="field">
-    <%= form.label :admin %>
-    <%= form.check_box :admin, id: :user_admin %>
-  </div>
+	    <%= form.label :password %>
+	    <%= form.text_field :password, id: :user_password %>
+	  
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+	    <%= form.label :admin %>
+	    <%= form.check_box :admin, id: :user_admin %>
+	  
+
+	  <div class="actions">
+	    <%= form.submit %>
+	  </div>
+
+	</div>
 <% end %>
