@@ -2,8 +2,23 @@ class Post < ApplicationRecord
 	belongs_to :user
 	has_many :comments, dependent: :destroy
 
-	has_many :taggings 
+	has_many :taggings, dependent: :delete_all
 	has_many :tags, through: :taggings
+
+	
+	# Next & Previous Buttons
+
+	def previous
+	  Post.where(["id < ?", id]).last
+	end
+
+	def next
+	  Post.where(["id > ?", id]).first
+	end
+
+
+
+	#Tagging Links
 
 	def self.tagged_with(name)
 		Tag.find_by_name!(name).posts

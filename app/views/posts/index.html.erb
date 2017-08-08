@@ -10,8 +10,16 @@
 	      	<%= link_to image_tag(post.url, :alt => "Image Description", class:"images-grid__image"), post %>
 	      </div>
 	    <% end %>
+	    
+	    
 
 	</div>
+
+	<div id="infinite-scrolling">
+  		<%= will_paginate @posts %>
+	</div>
+
+	
 	
 
 </div>

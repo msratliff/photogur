@@ -6,6 +6,7 @@
 .images {
 	display: flex;
 	justify-content: space-between;
+	flex-direction: column;
 }
 
 .images-grid {
@@ -73,6 +74,7 @@
 .post-container__image {
 	width: 80%;
 	margin: auto;
+	max-width: 40vw;
 }
 
 .post-name {
@@ -111,9 +113,14 @@ textarea{
 	grid-column-start: 2;
 	grid-column-end: 3;
 	height: 100px;
+	
+}
+
+
+.comment-box textarea {
 	width: 100%;
 	background-color: lightgrey;
 	border-style: solid;
-  border-width: medium;
+  	border-width: medium;
 	border-color: grey;
 }

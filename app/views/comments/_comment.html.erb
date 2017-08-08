@@ -1,7 +1,7 @@
 <% @comments.each do |comment| %>
 <div class="comment-box">
 <!-- I want to add the time and date when each individual comment was created  -->
-  <p><%= Time.now.strftime("%m/%d/%Y %H:%M") %></p>
+  <p><%= comment.created_at.strftime('%B %e, %Y at %l:%M %p') %></p>
   <p><b><%= comment.user.email %></b></p>
   <p><%= comment.content %></p>
 

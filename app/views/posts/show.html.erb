@@ -12,6 +12,9 @@
 
 	</div>
 
+	<%= link_to("Previous Post", @post.previous) if @post.previous %>
+	<%= link_to("Next Post", @post.next) if @post.next %>
+
 	<p>Submitted by <%= @post.user.email%> at <%= @post.created_at.strftime('%B %e, %Y at %l:%M %p') %></p>
 
 	<img src="<%= @post.url %>" alt="" class="post-container__image">

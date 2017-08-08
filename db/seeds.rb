@@ -7,19 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+i=0
 
-post_list = [
-  ["Panda", "Panda Panda Panda", "http://animals.sandiegozoo.org/sites/default/files/2016-09/animals_hero_panda.jpg", 3],
-  ["Snake", "Snake Snake Snake", "https://i.ytimg.com/vi/n174VWdSlCE/maxresdefault.jpg", 1],
-  ["Duck", "Duck Duck Duck", "https://greens.org.au/sites/greens.org.au/files/field/image/animals-duck-header.jpg", 3],
-  ["Snake", "Snake Snake Snake", "https://i.ytimg.com/vi/n174VWdSlCE/maxresdefault.jpg", 1],
-  ["Red Panda", "Red Panda Red Panda Red Panda", "https://ichef.bbci.co.uk/childrens-responsive-ichef-live/r/400/1x/cbbc/Animaltastic_Ambigous_Animals_Names_1024_576.jpg", 3],
-  ["Orangutan", "Orangutan Orangutan Orangutan", "http://i.huffpost.com/gen/1755634/images/o-ANIMALS-PONDERING-facebook.jpg", 1],
-  ["Zebra", "Zebra Zebra Zebra", "http://photos.mrkzy.com/wp-content/uploads/photos-mrkzy-animal-19183.jpg", 3]
+while i < 50 do
+	Post.find_or_create_by( name: "Bill Murray #{i}", description: "Knausgaard chia pok pok cardigan hammock. Skateboard church-key shoreditch williamsburg, pork belly iceland vexillologist man bun chia kale chips cronut direct trade meh biodiesel four loko. Before they sold out squid mumblecore, tilde raclette pitchfork man braid.", url: "https://www.fillmurray.com/#{rand(25..85)*10}/#{rand(25..85)*10}", user_id: rand(3))
+	
 
-  
-]
+  	n=0
 
-post_list.each do |name, description, url, user_id|
-  Post.find_or_create_by( name: name, description: description, url: url, user_id: user_id)
+	while n < 5 do
+		Comment.find_or_create_by(content: "Trust fund quinoa lyft everyday carry man bun slow-carb lumbersexual fam squid. Cray hammock cred put a bird on it.", post_id: i, user_id: rand(3))
+		n+=1
+	end
+
+	i+= 1
+
 end

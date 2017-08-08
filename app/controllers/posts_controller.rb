@@ -4,10 +4,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = if params[:tag]
-      Post.tagged_with(params[:tag]).limit(24).order(created_at: :desc)
+    
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 12).order(created_at: :desc)
     else
-      Post.all.limit(9).order(created_at: :desc)
+      @posts = Post.paginate(:page => params[:page], :per_page => 12).order('created_at DESC')
+
     end
 
   end
