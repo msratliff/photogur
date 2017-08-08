@@ -41,7 +41,7 @@
     left: -9999px;
     right: -9999px;
     margin: auto;
-    
+
     &:hover {
     	transform: scale(0.95);
     }
@@ -55,7 +55,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	
+
 }
 
 .post-container__links {
@@ -87,7 +87,7 @@
 
 .posts-form-container {
 	width: 75%;
-  	margin: auto;	
+  	margin: auto;
   	background-color: #222833;
 }
 
@@ -99,7 +99,7 @@
   text-align: left;
   color: white;
   font-size: 1.125rem;
-  
+
 }
 
 .posts-form > * {
@@ -110,6 +110,10 @@
 textarea{
 	grid-column-start: 2;
 	grid-column-end: 3;
-
 	height: 100px;
+	width: 100%;
+	background-color: lightgrey;
+	border-style: solid;
+  border-width: medium;
+	border-color: grey;
 }
