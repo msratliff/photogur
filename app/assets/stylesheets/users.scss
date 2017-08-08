@@ -16,6 +16,7 @@
 	background-color: darkgrey;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	padding: 1.5vw;
 }
 
 
@@ -42,9 +43,57 @@
     left: -9999px;
     right: -9999px;
     margin: auto;
+
+    &:hover {
+    	transform: scale(0.95);
+    }
 }
 
 .user-info {
-	margin-right: 10px;
-	font-size: 25px;
+	margin-right: 2%;
+	font-size: 1.25rem;
+	background-color: #222833;
+	padding-left: 1%; 
+	padding-right: 3%;
+	color: #f4f4f4;
 }
+	
+
+.user-info > a {
+	color: #f4f4f4;
+	text-decoration: none;
+	font-size: 1.0625rem;
+
+	&:hover {
+    	text-decoration: underline;
+    }
+
+}
+
+.user-form {
+	background-color: darkgrey;
+	margin: auto;
+	margin-top: 1vh;
+	width: 65%;
+	padding: 1rem;
+	border-radius: 0.5rem;
+}
+
+.user-form__grid {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-template-rows: 5vh 5vh 5vh;
+	padding: 35px;
+	justify-content: center;
+	text-align: left;	
+}
+
+.user-form__grid > input[type='checkbox'] {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+.user-form__grid > * {
+	margin: 5px;
+}
+
