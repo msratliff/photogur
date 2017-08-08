@@ -5,9 +5,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = if params[:tag]
-      Post.tagged_with(params[:tag])
+      Post.tagged_with(params[:tag]).limit(24).order(created_at: :desc)
     else
-      Post.all
+      Post.all.limit(9).order(created_at: :desc)
     end
 
   end
