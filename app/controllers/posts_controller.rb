@@ -45,7 +45,7 @@ class PostsController < ApplicationController
         end
       end
 
-    else 
+    else
       redirect_to login_path
     end
 
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    
+
     if current_user && (current_user.id == @post.user.id || current_user.admin?)
 
       respond_to do |format|
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
         end
       end
     else
-      redirect_to @post, notice: 'This is not your post' 
+      redirect_to @post, notice: 'This is not your post'
     end
 
   end
@@ -75,7 +75,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    
+
     if current_user && (current_user.id == @post.user.id || current_user.admin?)
 
       @post.destroy
@@ -84,7 +84,7 @@ class PostsController < ApplicationController
         format.json { head :no_content }
       end
     else
-      redirect_to @post, notice: 'This is not your post' 
+      redirect_to @post, notice: 'This is not your post'
     end
 
   end
