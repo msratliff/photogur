@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Photogur</title>
+		<title>Snowflake</title>
 		<%= csrf_meta_tags %>
 
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
 	<body>
 
 		<div class="nav">
-			
+
 			<div class="nav__postblock">
 				<%= link_to "Home", root_path , class:"nav__link" %> |
 				 <% if current_user %>
@@ -19,6 +19,10 @@
 				<% else %>
 					<%= link_to 'Sign In to Create Post', login_path , class:"nav__link"%>
 				<% end %>
+			</div>
+
+			<div class="nav__title">
+				<p>Snowflake</p>
 			</div>
 
 			<div class="nav__userblock">
@@ -36,7 +40,7 @@
 		</div>
 
 		<%= yield %>
-	
+
 	</body>
-	
+
 </html>

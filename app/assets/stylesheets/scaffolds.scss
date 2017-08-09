@@ -80,6 +80,11 @@ div {
   font-size: 1.125rem;
 }
 
+.nav__title > p{
+  font-family: Arial black, sans-serif;
+  font-size: 1.5em;
+}
+
 .nav__userblock {
   flex-grow: 1;
   display: flex;
@@ -104,8 +109,8 @@ div {
 }
 
 .background-image {
-  
-  background-image: url("https://images.unsplash.com/reserve/Lt0DwxdqRKSQkX7439ey_Chaz_fisheye-11.jpg"); 
+
+  background-image: url("https://images.unsplash.com/reserve/Lt0DwxdqRKSQkX7439ey_Chaz_fisheye-11.jpg");
   background-size:cover;
   height: 100vh;
   color: white;
