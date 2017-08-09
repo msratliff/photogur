@@ -35,6 +35,8 @@ gem 'will_paginate'
 
 gem 'acts-as-taggable-on'
 
+gem 'font-awesome-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -9,7 +9,11 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 12).order(created_at: :desc)
     else
       @posts = Post.paginate(:page => params[:page], :per_page => 12).order('created_at DESC')
+    end
 
+    respond_to do |format|
+      format.html {render "index" }
+      format.js {render :partial => "posts" }
     end
 
   end

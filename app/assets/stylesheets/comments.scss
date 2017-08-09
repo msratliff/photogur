@@ -2,18 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment-box{
-  background-color: lightgrey;
-  border-width:thin;
-  border-color: grey;
-  border-spacing: inherit;
-  border-collapse: separate;
-  border-spacing: 10px;
-  border-radius: 20px;
-  padding: 0px 10px;
-  margin: 10px 0;
+	background-color: lightgrey;
+	border-radius: 20px;
+	margin: 0.5rem;
+	padding: 0.5rem;
+}
+
+.comment__textbox {
+	background-color: white;
+	border-radius: 20px;
+	
+	margin: auto;
+	padding: 1rem;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	width: 95%;
 }
 
 
+.comment-box__left {
+	width: 50%;
+}
+
+.comment-box__right {
+	width: 50%;
+
+}
+
+.comment-box__right > a {
+	text-decoration: none;
+} 
 
 
+.fa {
+	text-decoration: none;
+	color: #222833;
+	font-size: 12rem;
+
+	&:hover {
+		color: white;
+	}
+}
 

@@ -59,9 +59,42 @@
 
 }
 
+.post-container__nextprev {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}	
+
+.nextbtn {
+	height: 2vw;
+	width: 7vw;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding: 0.5rem;
+	padding-top: 1rem; 
+	align-content: center;
+	text-decoration: none;
+	color: white;
+	background-color: #222833;
+	border-radius: 5px;
+	margin: 1%;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+}
+
+.prevbtn {
+	font-size: 2rem;
+}
+
 .post-container__links {
 	display: flex;
 	flex-direction: row;
+	justify-content: flex-end;
 	align-items: center;
 }
 
@@ -83,7 +116,14 @@
 
 .comments-container {
 	width: 75%;
+	background-color: #222833;
+	padding: 1rem;
 	margin: auto;
+	margin-top: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
 }
 
 
@@ -116,11 +156,6 @@ textarea{
 	
 }
 
-
-.comment-box textarea {
-	width: 100%;
-	background-color: lightgrey;
-	border-style: solid;
-  	border-width: medium;
-	border-color: grey;
+.icons {
+	font-size: 2rem;
 }

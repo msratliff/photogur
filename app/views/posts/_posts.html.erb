@@ -1,0 +1,7 @@
+<div class="images-grid">
+	<% @posts.each do |post| %>
+	      <div class="images-grid__images">
+		      	<%= link_to image_tag(post.url, :alt => "Image Description", class:"images-grid__image"), post %>
+	      </div>
+    <% end %>	    
+</div>
