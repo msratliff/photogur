@@ -51,20 +51,21 @@ class CommentsController < ApplicationController
   end
 
   private
-  def find_post
-    @post = Post.find(params[:post_id])
+    
+    def find_post
+      @post = Post.find(params[:post_id])
 
-  end
-
-  def find_comment
-    @comment = @post.comments.find(params[:id])
-  end
-
-  def comment_owner
-    unless current_user.id == @comment.user_id
-      flash[:notice] = "You shall not pass!"
-      redirect_to @post
     end
-  end
+
+    def find_comment
+      @comment = @post.comments.find(params[:id])
+    end
+
+    def comment_owner
+      unless current_user.id == @comment.user_id
+        flash[:notice] = "You shall not pass!"
+        redirect_to @post
+      end
+    end
 
 end
